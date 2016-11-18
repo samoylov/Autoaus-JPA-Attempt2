@@ -15,7 +15,7 @@
 
 <form action="saveCarModel" method="post">
 
-    <select name="makeID" style="min-width: 170px;">
+    <select name="makeID">
         <c:forEach var="make" items="${makes}">
             <option value="${make.id}">
                     ${make.name}

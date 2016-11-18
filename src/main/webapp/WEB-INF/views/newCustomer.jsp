@@ -27,7 +27,7 @@
 <h2>Existing Customers</h2>
 
 <form action="deleteCustomer" method="post">
-    <select size="10" name="id" style="min-width: 170px;">
+    <select size="10" name="id">
         <c:forEach var="customer" items="${customers}">
             <option value="${customer.id}">
                     ${customer.firstName}, ${customer.lastName}
