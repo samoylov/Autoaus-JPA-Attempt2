@@ -13,7 +13,6 @@
 <h2>New Country</h2>
 <form action="saveCountry" method="post">
     <input name="name" placeholder="country name">
-    <br>
     <button>save</button>
 </form>
 

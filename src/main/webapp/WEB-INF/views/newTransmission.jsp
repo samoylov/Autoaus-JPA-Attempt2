@@ -14,7 +14,6 @@
 
 <form action="saveTransmission" method="post">
     <input name="name" placeholder="Transmission name">
-    <br>
     <button>save</button>
 </form>
 

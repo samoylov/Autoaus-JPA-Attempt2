@@ -12,7 +12,6 @@
 
 <form action="saveEngine" method="post">
     <input name="name" placeholder="Engine name">
-    <br>
     <button>save</button>
 </form>
 
