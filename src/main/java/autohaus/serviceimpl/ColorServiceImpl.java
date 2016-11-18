@@ -2,7 +2,6 @@ package autohaus.serviceimpl;
 
 import autohaus.dao.ColorDao;
 import autohaus.entity.Color;
-import autohaus.entity.Color;
 import autohaus.service.ColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

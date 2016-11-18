@@ -29,7 +29,7 @@ public class TransmissionController {
     }
 
     @RequestMapping(value = "/deleteTransmission", method = RequestMethod.POST)
-    public String deleteTransmission(@RequestParam String id){
+    public String deleteTransmission(@RequestParam String id) {
         transmissionService.delete(Integer.parseInt(id));
         return "redirect:/newTransmission";
     }

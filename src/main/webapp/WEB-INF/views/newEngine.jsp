@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<%@include file="navigation.html"%>
+<%@include file="navigation.html" %>
 
 <h1>New Engine</h1>
 

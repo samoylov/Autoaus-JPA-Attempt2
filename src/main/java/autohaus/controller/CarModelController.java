@@ -33,7 +33,7 @@ public class CarModelController {
     }
 
     @RequestMapping(value = "/deleteCarModel", method = RequestMethod.POST)
-    public String deleteCarModel(@RequestParam String id){
+    public String deleteCarModel(@RequestParam String id) {
         carModelService.delete(Integer.parseInt(id));
         return "redirect:/newCarModel";
     }

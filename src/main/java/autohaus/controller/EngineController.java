@@ -29,7 +29,7 @@ public class EngineController {
     }
 
     @RequestMapping(value = "/deleteEngine", method = RequestMethod.POST)
-    public String deleteEngine(@RequestParam String id){
+    public String deleteEngine(@RequestParam String id) {
         engineService.delete(Integer.parseInt(id));
         return "redirect:/newEngine";
     }

@@ -3,7 +3,6 @@ package autohaus.controller;
 import autohaus.entity.Customer;
 import autohaus.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.support.PersistenceExceptionTranslationInterceptor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +29,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/deleteCustomer", method = RequestMethod.POST)
-    public String deleteCustomer(@RequestParam String id){
+    public String deleteCustomer(@RequestParam String id) {
         customerService.delete(Integer.parseInt(id));
         return "redirect:/newCustomer";
     }

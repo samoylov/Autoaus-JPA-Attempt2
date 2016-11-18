@@ -29,7 +29,7 @@ public class CountryController {
     }
 
     @RequestMapping(value = "/deleteCountry", method = RequestMethod.POST)
-    public String deleteCountry(@RequestParam String id){
+    public String deleteCountry(@RequestParam String id) {
         countryService.delete(Integer.parseInt(id));
         return "redirect:/newCountry";
     }

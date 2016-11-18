@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<%@include file="navigation.html"%>
+<%@ include file="navigation.html" %>
 
 <h1>Home Page</h1>
 
