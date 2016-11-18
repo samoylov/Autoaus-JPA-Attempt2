@@ -29,8 +29,9 @@ public class ColorController {
     }
 
     @RequestMapping(value = "/deleteColor", method = RequestMethod.POST)
-    public String deleteColor(@RequestParam String id) {
-        colorService.delete(Integer.parseInt(id));
+    public String deleteColor(@RequestParam String[] ids) {
+        for (String id : ids)
+            colorService.delete(Integer.parseInt(id));
         return "redirect:/newColor";
     }
 

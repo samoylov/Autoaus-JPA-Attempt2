@@ -20,7 +20,7 @@
 <h2>Existing Colors</h2>
 
 <form action="deleteColor" method="post">
-    <select size="10" name="id" style="width: 170px;">
+    <select size="10" name="ids" style="width: 170px;" multiple="multiple">
         <c:forEach var="color" items="${colors}">
             <option value="${color.id}">
                     ${color.name}
