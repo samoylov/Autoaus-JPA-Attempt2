@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>new Car Model</title>
@@ -13,7 +14,6 @@
 <h2>New Car Model</h2>
 
 <form action="saveCarModel" method="post">
-    <input name="name" placeholder="Car Model name">
 
     <select name="makeID" style="min-width: 170px;">
         <c:forEach var="make" items="${makes}">
@@ -22,6 +22,8 @@
             </option>
         </c:forEach>
     </select>
+
+    <input name="name" placeholder="Car Model name">
 
     <button>save</button>
 </form>
