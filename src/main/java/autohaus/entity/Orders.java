@@ -8,7 +8,7 @@ public class Orders implements Comparable<Orders> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Customer customer;
     @ManyToOne
     private Car car;
