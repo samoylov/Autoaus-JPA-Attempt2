@@ -13,7 +13,7 @@
 <h2>New Customer</h2>
 
 <form action="saveCustomer" method="post">
-    <input name="firstName" placeholder="first name">
+    <input name="firstName" placeholder="first name" autofocus="autofocus">
     <br>
     <input name="lastName" placeholder="last name">
     <br>

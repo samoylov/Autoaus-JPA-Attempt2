@@ -12,7 +12,7 @@
 
 <h2>New Country</h2>
 <form action="saveCountry" method="post">
-    <input name="name" placeholder="country name">
+    <input name="name" placeholder="country name" autofocus="autofocus">
     <button>save</button>
 </form>
 

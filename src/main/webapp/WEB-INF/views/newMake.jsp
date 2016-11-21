@@ -14,7 +14,7 @@
 <h2>New Make</h2>
 
 <form action="saveMake" method="post">
-    <input name="name" placeholder="Make name">
+    <input name="name" placeholder="Make name" autofocus="autofocus">
 
     <select name="countryID">
         <c:forEach var="country" items="${countries}">

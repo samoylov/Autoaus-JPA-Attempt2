@@ -23,7 +23,7 @@
         </c:forEach>
     </select>
 
-    <input name="name" placeholder="Car Model name">
+    <input name="name" placeholder="Car Model name" autofocus="autofocus">
 
     <button>save</button>
 </form>

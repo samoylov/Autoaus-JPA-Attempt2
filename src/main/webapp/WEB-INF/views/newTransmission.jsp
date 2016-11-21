@@ -13,7 +13,7 @@
 <h2>New Transmission</h2>
 
 <form action="saveTransmission" method="post">
-    <input name="name" placeholder="Transmission name">
+    <input name="name" placeholder="Transmission name" autofocus="autofocus">
     <button>save</button>
 </form>
 

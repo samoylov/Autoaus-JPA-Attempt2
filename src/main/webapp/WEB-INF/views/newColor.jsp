@@ -13,7 +13,7 @@
 <h2>New Color</h2>
 
 <form action="saveColor" method="post">
-    <input name="name" placeholder="color name">
+    <input name="name" placeholder="color name" autofocus="autofocus">
     <button>save</button>
 </form>
 

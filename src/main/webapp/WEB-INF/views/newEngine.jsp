@@ -11,7 +11,7 @@
 <h1>New Engine</h1>
 
 <form action="saveEngine" method="post">
-    <input name="name" placeholder="Engine name">
+    <input name="name" placeholder="Engine name" autofocus="autofocus">
     <button>save</button>
 </form>
 
