@@ -34,9 +34,4 @@ public class ColorController {
             colorService.delete(Integer.parseInt(id));
         return "redirect:/newColor";
     }
-
-
 }
-
-
-
