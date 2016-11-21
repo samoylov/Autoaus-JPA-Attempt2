@@ -18,7 +18,8 @@
     <select name="customerID" autofocus="autofocus">
         <c:forEach var="customer" items="${customers}">
             <option value="${customer.id}">
-                    ${customer}
+                    ${customer.firstName}
+                    ${customer.lastName}
             </option>
         </c:forEach>
     </select>
