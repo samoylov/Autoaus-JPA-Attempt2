@@ -26,7 +26,7 @@
     <select name="engineID">
         <c:forEach var="engine" items="${engines}">
             <option value="${engine.id}">
-                    ${engine.name}
+                    ${engine.na me}
             </option>
         </c:forEach>
     </select>
