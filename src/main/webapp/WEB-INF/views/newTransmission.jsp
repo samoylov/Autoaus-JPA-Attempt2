@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>new Transmission</title>
+    <%@include file="styles.html" %>
 </head>
 <body>
-
 <%@include file="navigation.html" %>
 
 <h1>Transmission</h1>
@@ -20,7 +20,7 @@
 <h2>Existing Transmissions</h2>
 
 <form action="deleteTransmission" method="post">
-    <select size="10" name="id" style="width: 170px;">
+    <select size="10" name="id" >
         <c:forEach var="transmission" items="${transmissions}">
             <option value="${transmission.id}">
                     ${transmission.name}

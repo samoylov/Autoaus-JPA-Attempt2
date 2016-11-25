@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
 <head>
     <title>new Car</title>
+    <%@include file="styles.html" %>
 </head>
 <body>
-
 <%@include file="navigation.html" %>
 
 <h1>Car</h1>

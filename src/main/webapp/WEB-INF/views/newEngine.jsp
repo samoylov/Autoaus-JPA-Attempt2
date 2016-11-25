@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>new Engine</title>
+    <%@include file="styles.html" %>
 </head>
 <body>
-
 <%@include file="navigation.html" %>
 
 <h1>New Engine</h1>
@@ -18,7 +18,7 @@
 <h2>Existing Engines</h2>
 
 <form action="deleteEngine" method="post">
-    <select size="10" name="id" style="width: 170px;">
+    <select size="10" name="id" >
         <c:forEach var="engine" items="${engines}">
             <option value="${engine.id}">
                     ${engine.name}

@@ -4,9 +4,9 @@
 <html>
 <head>
     <title>new Order</title>
+    <%@include file="styles.html" %>
 </head>
 <body>
-
 <%@include file="navigation.html" %>
 
 <h1>Orders</h1>

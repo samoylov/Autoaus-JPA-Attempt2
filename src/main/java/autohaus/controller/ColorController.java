@@ -38,5 +38,4 @@ public class ColorController {
         }
         return "redirect:/newColor";
     }
-
 }

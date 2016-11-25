@@ -1,13 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
-
 <html>
 <head>
     <title>new Color</title>
+    <%@include file="styles.html" %>
 </head>
 <body>
-
 <%@ include file="navigation.html" %>
 
 <h1>Color</h1>
