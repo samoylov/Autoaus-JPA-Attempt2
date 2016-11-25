@@ -1,0 +1,22 @@
+body, select, button{
+    font-size: 11pt;
+    font-family: Verdana;
+    font-weight: normal;
+}
+
+body{
+    background-color: lightgoldenrodyellow;
+    color: black;
+    max-width: 800px;
+    margin-left: 200px;
+}
+
+a, a:visited{
+    color: teal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a:hover{
+    text-decoration: none;
+}

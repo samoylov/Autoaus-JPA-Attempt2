@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>new Customer</title>
-    <%@include file="styles.html" %>
+    <%@include file="_styles.html" %>
 </head>
 <body>
-<%@include file="navigation.html" %>
+<%@include file="_header.html" %>
 
 <h1>Customer</h1>
 

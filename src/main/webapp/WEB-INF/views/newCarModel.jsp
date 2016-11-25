@@ -4,10 +4,10 @@
 <html>
 <head>
     <title>new Car Model</title>
-    <%@include file="styles.html" %>
+    <%@include file="_styles.html" %>
 </head>
 <body>
-<%@include file="navigation.html" %>
+<%@include file="_header.html" %>
 
 <h1>Car Model</h1>
 
