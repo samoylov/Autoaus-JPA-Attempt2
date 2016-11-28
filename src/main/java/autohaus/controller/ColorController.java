@@ -1,5 +1,6 @@
 package autohaus.controller;
 
+import autohaus.dto.ColorDTOUtilMapper;
 import autohaus.entity.Color;
 import autohaus.service.ColorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,12 @@ public class ColorController {
 
     @RequestMapping(value = "/newColor", method = RequestMethod.GET)
     public String newColor(Model model) {
+
         model.addAttribute("colors", colorService.findAll());
         model.addAttribute("addColor", new Color(""));
+        model.addAttribute("colorDTOs", ColorDTOUtilMapper.colorsToColorsDTO(colorService.findAll()));
+        // make use of DTOs to lighten data exchange, e.g. full object is 100kb but we need to display only Name
+
         return "newColor";
     }
 

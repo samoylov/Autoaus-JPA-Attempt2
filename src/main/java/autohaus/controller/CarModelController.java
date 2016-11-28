@@ -13,7 +13,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class CarModelController {
@@ -24,7 +23,7 @@ public class CarModelController {
     private MakeService makeService;
 
     @InitBinder
-    public void InitBinder(WebDataBinder binder){
+    public void InitBinder(WebDataBinder binder) {
         binder.registerCustomEditor(CarModel.class, new CarModelEditor(carModelService));
         binder.registerCustomEditor(Make.class, new MakeEditor(makeService));
     }
@@ -34,13 +33,12 @@ public class CarModelController {
         model.addAttribute("carmodels", carModelService.findAll());
         model.addAttribute("makes", makeService.findAll());
         model.addAttribute("carModel", new CarModel());
-        model.addAttribute("modelsToDelete", new ArrayList<CarModel>());
         return "newCarModel";
     }
 
     @RequestMapping(value = "/saveCarModel", method = RequestMethod.POST)
     public String saveCarModel(/*@RequestParam String name, String makeID*/
-                @ModelAttribute CarModel carModel, Make make) {
+                               @ModelAttribute CarModel carModel, Make make) {
         // CarModel carModel = new CarModel(name, makeService.findOne(Integer.parseInt(makeID)));
 
         carModelService.save(carModel);
@@ -50,15 +48,6 @@ public class CarModelController {
     @RequestMapping(value = "/deleteCarModel", method = RequestMethod.POST)
     public String deleteCarModel(@RequestParam String id) {
         carModelService.delete(Integer.parseInt(id));
-        return "redirect:/newCarModel";
-    }
-
-    @RequestMapping(value = "/deleteCarModels", method = RequestMethod.POST)
-    public String deleteCarModels(@ModelAttribute ArrayList<CarModel> models) {
-        for(CarModel model: models){
-            carModelService.delete(model.getId());
-
-        }
         return "redirect:/newCarModel";
     }
 

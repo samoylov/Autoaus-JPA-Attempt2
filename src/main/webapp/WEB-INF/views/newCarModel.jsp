@@ -33,17 +33,5 @@
     <button>delete</button>
 </form>
 
-<sf:form modelAttribute="modelsToDelete" action="deleteCarModels" method="post">
-    <sf:select path="" size="10" name="id" multiple="multiple">
-        <c:forEach var="carmodel" items="${carmodels}">
-            <option value="${carmodel.id}">
-                    ${carmodel.make.name} ${carmodel.name}
-            </option>
-        </c:forEach>
-    </sf:select>
-    <br>
-    <button>delete</button>
-</sf:form>
-
 </body>
 </html>

@@ -1,12 +1,10 @@
-body, select, button{
-    font-size: 11pt;
-    font-family: Verdana;
-    font-weight: normal;
+body, select, button, input, form{
+    background-color: #fff;
+    color: #333;
+    font: 16px Helvetica, Arial, sans-serif;
 }
 
 body{
-    background-color: lightgoldenrodyellow;
-    color: black;
     max-width: 800px;
     margin-left: 200px;
 }
@@ -20,3 +18,12 @@ a, a:visited{
 a:hover{
     text-decoration: none;
 }
+
+h1, h2, h3{
+    color: #333;
+}
+
+select{
+    min-width: 200px;
+}
+
