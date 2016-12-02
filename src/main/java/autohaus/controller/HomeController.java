@@ -11,4 +11,20 @@ public class HomeController {
     public String home() {
         return "home";
     }
+
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
+    public String homePage() {
+        return "redirect:/";
+    }
+
+
+    @RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+    public String login() {
+        return "loginpage";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public String logout() {
+        return "redirect:/";
+    }
 }
