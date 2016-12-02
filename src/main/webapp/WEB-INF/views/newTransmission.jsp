@@ -6,7 +6,7 @@
     <%@include file="_styles.html" %>
 </head>
 <body>
-<%@include file="_header.html" %>
+<%@include file="_header.jsp" %>
 
 <h1>Transmission</h1>
 

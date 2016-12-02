@@ -21,6 +21,7 @@ public class User implements UserDetails {
     private String password;
     private String email;
     private String phone;
+    private String photoPath;
 
     @Enumerated
     private UserRole role;
@@ -81,6 +82,14 @@ public class User implements UserDetails {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {

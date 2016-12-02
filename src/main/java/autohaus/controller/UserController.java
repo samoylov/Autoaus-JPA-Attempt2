@@ -1,17 +1,15 @@
 package autohaus.controller;
 
-import java.security.Principal;
-
 import autohaus.dto.DTOUtilMapper;
 import autohaus.entity.User;
 import autohaus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.security.Principal;
 
 @Controller
 public class UserController {
@@ -30,7 +28,6 @@ public class UserController {
     public String saveUser(@ModelAttribute User user, Model model) {
 
         userService.save(user);
-
         return "redirect:/registration";
     }
 
@@ -38,7 +35,6 @@ public class UserController {
     public String newUser(@PathVariable int id) {
 
         userService.delete(id);
-
         return "redirect:/registration";
     }
 
@@ -46,12 +42,16 @@ public class UserController {
     public String profile(Principal principal, Model model) {
 
         System.out.println(principal);
-
         User user = userService.findOne(Integer.parseInt(principal.getName()));
-
         model.addAttribute("user", user);
-
         return "profile";
+    }
+
+    @RequestMapping(value = "/saveImage", method = RequestMethod.POST)
+    public String saveImage(Principal principal,
+                            @RequestParam MultipartFile image) {
+        userService.saveImage(principal, image);
+        return "redirect:/profile";
     }
 
 }

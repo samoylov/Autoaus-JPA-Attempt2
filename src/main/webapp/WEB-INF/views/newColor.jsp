@@ -1,22 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>new Color</title>
     <%@include file="_styles.html" %>
 </head>
 <body>
-<%@ include file="_header.html" %>
+<%@ include file="_header.jsp" %>
 
 <h1>Color</h1>
 
 <h2>New Color</h2>
 
-<sf:form modelAttribute="addColor" action="saveColor" method="post">
-    <sf:input path="name" placeholder="color name" autofocus="autofocus"/>
+<form:form modelAttribute="addColor" action="saveColor" method="post">
+    <form:input path="name" placeholder="color name" autofocus="autofocus"/>
     <button>save</button>
-</sf:form>
+</form:form>
 
 <h2>Existing Colors</h2>
 

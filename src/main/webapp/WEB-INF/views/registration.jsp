@@ -32,19 +32,19 @@
                 <p class="email">
                     <form:input path="email" type="text"
                                 class="validate[required,custom[email]] feedback-input"
-                                id="email" placeholder="Email"/>
+                                id="email" placeholder="email"/>
                 </p>
 
                 <p class="password">
                     <form:input path="password" type="text"
                                 class="validate[required,custom[email]] feedback-input"
-                                id="email" placeholder="Email"/>
+                                id="email" placeholder="password"/>
                 </p>
 
                 <p class="phone">
                     <form:input path="phone" type="text"
                                 class="validate[required,custom[password]] feedback-input"
-                                id="email" placeholder="Email"/>
+                                id="email" placeholder="phone"/>
                 </p>
 
                 <div class="submit">
