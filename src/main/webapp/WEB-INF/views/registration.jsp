@@ -20,30 +20,24 @@
         <div id="form-div">
             <form class="form" id="form1">
 
-                <p class="name">
-                    <form:input path="name" type="text"
-                                class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
-                                placeholder="Name" id="name"/>
-                </p>
-
-                <p class="email">
-                    <form:input path="email" type="text"
-                                class="validate[required,custom[email]] feedback-input"
-                                id="email" placeholder="email"/>
-                </p>
-
-                <p class="password">
-                    <form:input path="password" type="text"
-                                class="validate[required,custom[email]] feedback-input"
-                                id="email" placeholder="password"/>
-                </p>
-
-                <p class="phone">
-                    <form:input path="phone" type="text"
-                                class="validate[required,custom[password]] feedback-input"
-                                id="email" placeholder="phone"/>
-                </p>
-
+                <form:input path="name" type="text"
+                            class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+                            placeholder="Name" id="name"/>
+                <label for="name">${exception}</label>
+                <br>
+                <form:input path="email" type="text"
+                            class="validate[required,custom[email]] feedback-input"
+                            id="email" placeholder="email"/>
+                <br>
+                <form:input path="password" type="text"
+                            class="validate[required,custom[email]] feedback-input"
+                            id="password" placeholder="password"/>
+                <label for="password">${exception}</label>
+                <br>
+                <form:input path="phone" type="text"
+                            class="validate[required,custom[password]] feedback-input"
+                            id="phone" placeholder="phone"/>
+                <br>
                 <div class="submit">
                     <input type="submit" value="SEND" id="button-blue"/>
                     <div class="ease"></div>

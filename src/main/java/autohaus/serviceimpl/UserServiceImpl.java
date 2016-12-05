@@ -1,12 +1,13 @@
 package autohaus.serviceimpl;
 
-import autohaus.dao.ModelDao;
 import autohaus.dao.UserDao;
 import autohaus.entity.User;
 import autohaus.entity.UserRole;
 import autohaus.service.UserService;
+import autohaus.validation.Validator;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -28,7 +29,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
-    public void save(User user) {
+    @Autowired
+    @Qualifier("userValidator")
+    private Validator validator;
+
+    public void save(User user) throws Exception {
+
+        validator.validate(user);
+
         user.setRole(UserRole.ROLE_USER);
         user.setPassword(encoder.encode(user.getPassword()));
         dao.save(user);

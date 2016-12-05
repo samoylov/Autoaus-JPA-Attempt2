@@ -27,7 +27,12 @@ public class UserController {
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute User user, Model model) {
 
-        userService.save(user);
+        try {
+            userService.save(user);
+        } catch (Exception e) {
+            model.addAttribute("exception", e.getMessage());
+            return "registration";
+        }
         return "redirect:/registration";
     }
 

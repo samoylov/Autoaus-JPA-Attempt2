@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserService {
 
-    void save(User object);
+    void save(User object) throws Exception;
 
     List<User> findAll();
 
