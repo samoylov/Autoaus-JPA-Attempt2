@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>new Make</title>
@@ -12,7 +13,7 @@
 
 <h2>New Make</h2>
 
-<form action="saveMake" method="post">
+<form:form action="saveMake" method="post">
     <input name="name" placeholder="Make name" autofocus="autofocus">
 
     <select name="countryID">
@@ -24,11 +25,11 @@
     </select>
 
     <button>save</button>
-</form>
+</form:form>
 
 <h2>Existing Makes</h2>
 
-<form action="deleteMake" method="post">
+<form:form action="deleteMake" method="post">
     <select size="10" name="id" >
         <c:forEach var="make" items="${makes}">
             <option value="${make.id}">
@@ -38,7 +39,7 @@
     </select>
     <br>
     <button>delete</button>
-</form>
+</form:form>
 
 </body>
 </html>

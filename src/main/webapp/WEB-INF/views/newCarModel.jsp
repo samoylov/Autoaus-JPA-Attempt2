@@ -21,7 +21,7 @@
 
 <h2>Existing Car Models</h2>
 
-<form action="deleteCarModel" method="post">
+<form:form action="deleteCarModel" method="post">
     <select size="10" name="id">
         <c:forEach var="carmodel" items="${carmodels}">
             <option value="${carmodel.id}">
@@ -31,7 +31,7 @@
     </select>
     <br>
     <button>delete</button>
-</form>
+</form:form>
 
 </body>
 </html>

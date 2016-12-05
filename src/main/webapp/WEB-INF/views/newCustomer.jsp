@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>new Customer</title>
@@ -12,7 +13,7 @@
 
 <h2>New Customer</h2>
 
-<form action="saveCustomer" method="post">
+<form:form action="saveCustomer" method="post">
     <input name="firstName" placeholder="first name" autofocus="autofocus">
     <br>
     <input name="lastName" placeholder="last name">
@@ -22,11 +23,11 @@
     <input name="email" type="email" placeholder="email">
     <br>
     <button>save</button>
-</form>
+</form:form>
 
 <h2>Existing Customers</h2>
 
-<form action="deleteCustomer" method="post">
+<form:form action="deleteCustomer" method="post">
     <select size="10" name="id">
         <c:forEach var="customer" items="${customers}">
             <option value="${customer.id}">
@@ -36,7 +37,7 @@
     </select>
     <br>
     <button>delete</button>
-</form>
+</form:form>
 
 </body>
 </html>

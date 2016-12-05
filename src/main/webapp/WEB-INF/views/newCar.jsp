@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <html>
 <head>
     <title>new Car</title>
@@ -12,7 +14,7 @@
 
 <h2>New Car</h2>
 
-<form action="saveCar" method="post">
+<form:form action="saveCar" method="post">
 
     <select name="carModelID">
         <c:forEach var="carModel" items="${carModels}">
@@ -49,11 +51,11 @@
     <input name="price" placeholder="price" autofocus="autofocus">
 
     <button>save</button>
-</form>
+</form:form>
 
 <h2>Existing Cars</h2>
 
-<form action="deleteCar" method="post">
+<form:form action="deleteCar" method="post">
     <select size="10" name="id">
         <c:forEach var="car" items="${cars}">
             <option value="${car.id}">
@@ -68,7 +70,7 @@
     </select>
     <br>
     <button>delete</button>
-</form>
+</form:form>
 
 </body>
 </html>
