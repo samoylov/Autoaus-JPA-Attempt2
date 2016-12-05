@@ -39,6 +39,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         user.setRole(UserRole.ROLE_USER);
         user.setPassword(encoder.encode(user.getPassword()));
+
         dao.save(user);
     }
 
