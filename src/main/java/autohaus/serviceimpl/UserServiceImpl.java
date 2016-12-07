@@ -87,4 +87,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         dao.save(user);
     }
 
+    @Override
+    public User findByUuid(String uuid) {
+        return dao.findByUuid(uuid);
+    }
+
+    @Override
+    public void update(User user) {
+        dao.save(user);
+    }
 }

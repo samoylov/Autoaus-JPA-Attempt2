@@ -23,6 +23,9 @@ public class User implements UserDetails {
     private String phone;
     private String photoPath;
 
+    private boolean enabled;
+    private String uuid;
+
     @Enumerated
     private UserRole role;
 
@@ -115,6 +118,18 @@ public class User implements UserDetails {
     }
 
     public boolean isEnabled() {
-        return true;
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }

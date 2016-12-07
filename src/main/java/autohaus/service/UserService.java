@@ -18,4 +18,8 @@ public interface UserService {
 
     public void saveImage(Principal principal, MultipartFile multipartFile);
 
+    User findByUuid(String uuid);
+
+    void update(User user);
+
 }
