@@ -13,23 +13,22 @@
 
 <h2>New Color</h2>
 
-<form:form modelAttribute="addColor" action="saveColor" method="post">
-    <form:input path="name" placeholder="color name" autofocus="autofocus"/>
-    <button>save</button>
-</form:form>
+<input id="name" name="name" placeholder="color name" autofocus="autofocus"/>
+<br>
+<button id="saveColorButton">save</button>
+<br>
+<label id="error"></label>
+<br>
+
 
 <h2>Existing Colors</h2>
 
-<form:form action="deleteColor" method="post">
-    <select multiple="multiple" size="10" name="ids">
-        <c:forEach var="color" items="${colors}">
-            <option value="${color.id}">
-                    ${color.name}
-            </option>
-        </c:forEach>
-    </select>
-    <br>
-    <button>delete</button>
-</form:form>
+
+<select size="10" id="colorList">
+</select>
+<br>
+<button onclick="deleteColor()">deleteColor</button>
+
+<script src="/js/color.js"></script>
 </body>
 </html>

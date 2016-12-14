@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @Controller
 public class CarModelController {
 

@@ -34,4 +34,9 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <error-page>
+        <location>/WEB-INF/views/404.jsp</location>
+        <error-code>404</error-code>
+    </error-page>
 </web-app>

@@ -12,6 +12,15 @@
     <a href="/newOrder">Orders</a>
 </nav>
 
+<%-- JQuery --%>
+<script src="/js/jquery.min.js"></script>
+
+<%-- Security --%>
+<input type="hidden" name="csrf_name"
+       value="${_csrf.parameterName}" />
+<input type="hidden" name="csrf_value"
+       value="${_csrf.token}" />
+
 <%-- user authentication --%>
 
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
@@ -40,8 +49,12 @@
 
 </sec:authorize>
 
+
+
 <sec:authorize access="isAuthenticated()">
     <a href="profile">profile</a>
 </sec:authorize>
 
 <%-- / user authentication --%>
+
+
