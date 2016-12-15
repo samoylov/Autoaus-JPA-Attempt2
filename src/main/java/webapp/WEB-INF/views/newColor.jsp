@@ -13,13 +13,13 @@
 
 <h2>New Color</h2>
 
+<form id="newColorForm" onsubmit="saveColor()" method="post">
 <input id="name" name="name" placeholder="color name" autofocus="autofocus"/>
 <br>
-<button id="saveColorButton">save</button>
+<button id="saveColorButton" >save</button>
 <br>
 <label id="error"></label>
-<br>
-
+</form>
 
 <h2>Existing Colors</h2>
 

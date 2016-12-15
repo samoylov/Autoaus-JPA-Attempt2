@@ -1,5 +1,9 @@
-document.getElementById('saveColorButton').onclick = function () {
+document.getElementById("newColorForm").addEventListener("click", function(event){
+    event.preventDefault()
+    saveColor();
+});
 
+function saveColor() {
     if (document.getElementById('name').value == '') {
         document.getElementById('error').innerHTML = 'error';
         document.getElementById('error').style.backgroundColor = 'red';
@@ -8,7 +12,7 @@ document.getElementById('saveColorButton').onclick = function () {
 
         var color = {
             name: document.getElementById('name').value
-        }
+        };
         document.getElementById('name').value = '';
         $.ajax({
             url: 'saveColor?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
@@ -16,25 +20,36 @@ document.getElementById('saveColorButton').onclick = function () {
             contentType: 'application/json; charset=UTF-8',
             dataType: 'json',
             data: JSON.stringify(color),
-            success: function (res) {
-                // remove next line afterwards
-                console.log(res);
-                loadColors(res);
-            }
-        })
+        });
+        loadColors()
     }
 }
 
-function loadColors(res) {
+function loadColors() {
 
-    console.log("-----------");
-    for (var i = 0; i < res.length; i++) {
-        console.log(res[i].name);
-        var option = document.createElement('option');
-        option.text = res[i].name;
-        option.id = res[i].id;
-        document.getElementById('colorList').add(option);
-    }
+    var select = document.getElementById('colorList');
+    if (select.options.length > 0)
+        for (var o = select.options.length; o > -1; o--) {
+            select.remove(o);
+            console.log(o)
+        }
+
+    $.ajax({
+        url: 'loadColors?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+        method: 'POST',
+        contentType: 'application/json; charset=UTF-8',
+        dataType: 'json',
+        // data: JSON.stringify(color),
+        success: function (res) {
+            // remove next line afterwards
+            for (var i = 0; i < res.length; i++) {
+                var option = document.createElement('option');
+                option.text = res[i].name;
+                option.id = res[i].id;
+                document.getElementById('colorList').add(option);
+            }
+        }
+    })
 }
 
 function deleteColor() {
@@ -46,18 +61,11 @@ function deleteColor() {
         contentType: 'application/json; charset=UTF-8',
         dataType: 'json',
         // data: JSON.stringify(id)
-        data: JSON.stringify(id)
-    })
+        data: id
+    });
+    loadColors()
 }
 
 window.onload = function () {
-    $.ajax({
-        url: 'loadColors?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-        method: 'POST',
-        contentType: 'application/json; charset=UTF-8',
-        dataType: 'json',
-        success: function (res) {
-            loadColors(res);
-        }
-    })
+    loadColors()
 }
