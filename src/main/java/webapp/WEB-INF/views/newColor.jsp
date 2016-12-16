@@ -13,10 +13,10 @@
 
 <h2>New Color</h2>
 
-<form id="newColorForm" onsubmit="saveColor()" method="post">
+<form id="newColorForm" method="post">
 <input id="name" name="name" placeholder="color name" autofocus="autofocus"/>
 <br>
-<button id="saveColorButton" >save</button>
+<button id="saveColorButton">save</button>
 <br>
 <label id="error"></label>
 </form>
@@ -24,7 +24,7 @@
 <h2>Existing Colors</h2>
 
 
-<select size="10" id="colorList">
+<select size="10" id="colorList" multiple="multiple">
 </select>
 <br>
 <button onclick="deleteColor()">deleteColor</button>

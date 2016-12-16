@@ -34,16 +34,21 @@ public class ColorController {
     @RequestMapping(value = "/saveColor", method = RequestMethod.POST)
     public
     @ResponseBody
-    void saveColor(@RequestBody Color color) {
+    boolean saveColor(@RequestBody Color color) {
         colorService.save(color);
+        return true;
     }
 
+    @Transactional
     @RequestMapping(value = "/deleteColor", method = RequestMethod.POST)
     public
     @ResponseBody
-    void deleteColor(@RequestBody String id) {
-        System.out.println(id);
-        colorService.delete(Integer.parseInt(id));
+    boolean deleteColor(@RequestBody String[] ids) {
+
+        for (String id : ids)
+            colorService.delete(Integer.parseInt(id));
+        return true;
+
     }
 
 
